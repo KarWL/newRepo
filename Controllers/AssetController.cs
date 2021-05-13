@@ -4,34 +4,38 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using newRepo.Data;
 using newRepo.Models;
 
 namespace newRepo.Controllers
 {
     public class AssetController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly PropertyDB _context;
 
-        public AssetController(ILogger<HomeController> logger)
+        public AssetController(PropertyDB context)
         {
-            _logger = logger;
+            _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            return View(await _context.PropertyInfo.ToListAsync());
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+        // private readonly ILogger<HomeController> _logger;
 
-        public IActionResult Create()
-        {
-            return View();
-        }
+        // public AssetController(ILogger<HomeController> logger)
+        // {
+        //     _logger = logger;
+        // }
+
+        // public IActionResult Create()
+        // {
+        //     return View();
+        // }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

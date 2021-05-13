@@ -66,10 +66,15 @@ namespace newRepo.Migrations
             modelBuilder.Entity("newRepo.Models.PropertyInfo", b =>
                 {
                     b.HasOne("newRepo.Models.User", "User")
-                        .WithMany()
+                        .WithMany("PropertyInfos")
                         .HasForeignKey("UserId");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("newRepo.Models.User", b =>
+                {
+                    b.Navigation("PropertyInfos");
                 });
 #pragma warning restore 612, 618
         }

@@ -15,5 +15,6 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2"/>
     <PackageReference Include="Microsoft.Composition" Version="1.0.31"/>
     <PackageReference Include="System.Composition" Version="5.0.1"/>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1"/>
   </ItemGroup>
 </Project>

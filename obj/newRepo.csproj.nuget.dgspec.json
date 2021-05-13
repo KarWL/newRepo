@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\newRepo.csproj": {}
+    "C:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\newRepo.csproj": {}
   },
   "projects": {
-    "c:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\newRepo.csproj": {
+    "C:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\newRepo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\newRepo.csproj",
+        "projectUniqueName": "C:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\newRepo.csproj",
         "projectName": "newRepo",
-        "projectPath": "c:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\newRepo.csproj",
+        "projectPath": "C:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\newRepo.csproj",
         "packagesPath": "C:\\Users\\leeka\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\obj\\",
+        "outputPath": "C:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\leeka\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -69,6 +69,10 @@
             "Microsoft.EntityFrameworkCore.Tools.DotNet": {
               "target": "Package",
               "version": "[2.0.3, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[5.0.1, )"
             },
             "Microsoft.Extensions.Identity.Stores": {
               "target": "Package",

@@ -8179,6 +8179,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.5",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.5",
       "Microsoft.EntityFrameworkCore.Tools.DotNet >= 2.0.3",
+      "Microsoft.Extensions.DependencyInjection >= 5.0.1",
       "Microsoft.Extensions.Identity.Stores >= 5.0.5",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
       "System.Composition >= 5.0.1",
@@ -8191,11 +8192,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\newRepo.csproj",
+      "projectUniqueName": "C:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\newRepo.csproj",
       "projectName": "newRepo",
-      "projectPath": "c:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\newRepo.csproj",
+      "projectPath": "C:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\newRepo.csproj",
       "packagesPath": "C:\\Users\\leeka\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\obj\\",
+      "outputPath": "C:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\leeka\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -8253,6 +8254,10 @@
           "Microsoft.EntityFrameworkCore.Tools.DotNet": {
             "target": "Package",
             "version": "[2.0.3, )"
+          },
+          "Microsoft.Extensions.DependencyInjection": {
+            "target": "Package",
+            "version": "[5.0.1, )"
           },
           "Microsoft.Extensions.Identity.Stores": {
             "target": "Package",
