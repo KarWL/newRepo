@@ -1,40 +1,54 @@
-@model IEnumerable<newRepo.Models.PropertyInfo>
+@model newRepo.Models.User
 
 @{
-    ViewData["Title"] = "Create Assets";
+    ViewData["Title"] = "Assets Management";
 }
 
-<h2>Index</h2>
+<h2>Asset </h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<dt class="col-sm-2">
+    @Html.DisplayNameFor(model => model.Id)
+</dt>
+<dd class="col-sm-2">
+    @Html.DisplayFor(model => model.Id)
+</dd>
+
+<dt class="col-sm-2">
+    @Html.DisplayNameFor(model => model.Name)
+</dt>
+<dd class="col-sm-2">
+    @Html.DisplayFor(model => model.Name)
+</dd>
+
+<a asp-action="Add" asp-controller="Add" class="btn btn-secondary">
+    Add
+</a>
+<br /><br /><br />
 <table class="table">
     <thead>
         <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Name)
+               <a>Id</a>
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Type)
+                   <a>Type </a>
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Description)
-                </th>
-            <th></th>
+                  <a>Name</a>>
+                </th>            
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.PropertyInfos) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Type)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Description)
+                @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
@@ -45,3 +59,4 @@
 }
     </tbody>
 </table>
+

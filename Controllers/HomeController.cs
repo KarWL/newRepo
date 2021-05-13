@@ -25,7 +25,7 @@ namespace newRepo.Controllers
         public HomeController(PropertyDB context)
         {
             _context = context;
-        }     
+        }
 
 
         public IActionResult Index()
@@ -33,15 +33,39 @@ namespace newRepo.Controllers
             return View();
         }
 
-       public async Task<IActionResult> Create()
+        public async Task<IActionResult> Users()
         {
-            return View(await _context.PropertyInfo.ToListAsync());
+            return View(await _context.User.ToListAsync());
         }
 
 
-        public IActionResult Privacy()
+        public async Task<IActionResult> Details(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            // var data = await _context.PropertyInfo
+            // .Include(s => s.User).FirstOrDefaultAsync(m => m.User.Id == id);
+
+            // if (data == null)
+            // {
+            //     return NotFound();
+            // }
+
+            var data = await _context.User
+        .Include(s => s.PropertyInfos)            
+        .AsNoTracking()
+        .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (data == null)
+            {
+                Response.StatusCode = 404;
+                return View("ErrorPage", id.Value);
+            }
+
+            return View(data);
         }
 
         // public IActionResult Create()
