@@ -13,6 +13,8 @@ namespace newRepo.Data
         : base(options) { }
 
         public DbSet<newRepo.Models.PropertyInfo> PropertyInfo { get; set; }
+
+        public DbSet<newRepo.Models.User> User { get; set; }
     }
 
 }

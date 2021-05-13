@@ -82,3 +82,9 @@ C:\Users\leeka\OneDrive\Documents\NewRepo\newRepo\bin\Debug\net5.0\Microsoft.Asp
 C:\Users\leeka\OneDrive\Documents\NewRepo\newRepo\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\leeka\OneDrive\Documents\NewRepo\newRepo\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\leeka\OneDrive\Documents\NewRepo\newRepo\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\leeka\OneDrive\Documents\NewRepo\newRepo\bin\Debug\net5.0\newRepo.StaticWebAssets.xml
+C:\Users\leeka\OneDrive\Documents\NewRepo\newRepo\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+C:\Users\leeka\OneDrive\Documents\NewRepo\newRepo\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\leeka\OneDrive\Documents\NewRepo\newRepo\bin\Debug\net5.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\leeka\OneDrive\Documents\NewRepo\newRepo\obj\Debug\net5.0\newRepo.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\leeka\OneDrive\Documents\NewRepo\newRepo\obj\Debug\net5.0\Razor\Views\Home\Create.cshtml.g.cs
