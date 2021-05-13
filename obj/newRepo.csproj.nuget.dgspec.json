@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\newRepo.csproj": {}
+    "c:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\newRepo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\newRepo.csproj": {
+    "c:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\newRepo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\newRepo.csproj",
+        "projectUniqueName": "c:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\newRepo.csproj",
         "projectName": "newRepo",
-        "projectPath": "C:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\newRepo.csproj",
+        "projectPath": "c:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\newRepo.csproj",
         "packagesPath": "C:\\Users\\leeka\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\obj\\",
+        "outputPath": "c:\\Users\\leeka\\OneDrive\\Documents\\NewRepo\\newRepo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\leeka\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,6 +38,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.5, )"
@@ -45,6 +49,10 @@
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
               "version": "[5.0.5, )"
+            },
+            "Microsoft.Composition": {
+              "target": "Package",
+              "version": "[1.0.31, )"
             },
             "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
@@ -65,6 +73,14 @@
             "Microsoft.Extensions.Identity.Stores": {
               "target": "Package",
               "version": "[5.0.5, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "System.Composition": {
+              "target": "Package",
+              "version": "[5.0.1, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",
