@@ -10,8 +10,8 @@ using newRepo.Data;
 namespace newRepo.Migrations
 {
     [DbContext(typeof(PropertyDB))]
-    [Migration("20210512155551_Initial")]
-    partial class Initial
+    [Migration("20210513115942_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -31,6 +31,9 @@ namespace newRepo.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OwnerId")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Type")
