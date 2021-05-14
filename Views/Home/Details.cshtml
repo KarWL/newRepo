@@ -20,7 +20,7 @@
     @Html.DisplayFor(model => model.Name)
 </dd>
 
-<a asp-action="Add" asp-controller="Add" class="btn btn-secondary">
+<a asp-action="Create" class="btn btn-secondary" asp-route-id=@Model.Id>
     Add
 </a>
 <br /><br /><br />
@@ -34,7 +34,7 @@
                    <a>Type </a>
                 </th>
                 <th>
-                  <a>Name</a>>
+                  <a>Name</a>
                 </th>            
         </tr>
     </thead>

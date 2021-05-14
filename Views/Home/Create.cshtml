@@ -1,0 +1,33 @@
+@model newRepo.Models.User
+
+@{
+    ViewData["Title"] = "Assets Management";
+}
+
+<h2>Asset </h2>
+
+<dt class="col-sm-2">
+    @Html.DisplayNameFor(model => model.Id)
+</dt>
+<dd class="col-sm-2">
+    @Html.DisplayFor(model => model.Id)
+</dd>
+
+<dt class="col-sm-2">
+    @Html.DisplayNameFor(model => model.Name)
+</dt>
+<dd class="col-sm-2">
+    @Html.DisplayFor(model => model.Name)
+</dd>
+
+
+<form>
+    <input type="text" id="Name" name="Name" placeholder="Name">
+      <input type="text" id="Type" name="Type" placeholder="Type">
+      <input type="text" id="Type" name="Description" placeholder="Description">
+       <a asp-action="Create" class="btn btn-secondary" asp-route-id=@Model.Id>
+    Add
+</a>
+     
+</form>
+

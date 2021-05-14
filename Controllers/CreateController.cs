@@ -11,7 +11,7 @@ using newRepo.Models;
 
 namespace newRepo.Controllers
 {
-    public class AssetController : Controller
+    public class CreateController : Controller
     {
         //useless for now -- stick all control into homecontroller to avoid configuration for the routing for now
         // private readonly PropertyDB _context;
@@ -20,6 +20,12 @@ namespace newRepo.Controllers
         // {
         //     _context = context;
         // }
+
+        // public IActionResult Create()
+        // {
+        //     return View();
+        // }
+
 
         // public async Task<IActionResult> Index()
         // {

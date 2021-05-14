@@ -38,6 +38,29 @@ namespace newRepo.Controllers
             return View(await _context.User.ToListAsync());
         }
 
+        public async Task<IActionResult> Create(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var data = await _context.User                   
+                    .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (data == null)
+            {
+                Response.StatusCode = 404;
+                return View("ErrorPage", id.Value);
+            }
+
+            return View(data);
+        }
+
+        public IActionResult Edit()
+        {
+            return View();
+        }
+
 
         public async Task<IActionResult> Details(int? id)
         {
@@ -45,19 +68,10 @@ namespace newRepo.Controllers
             {
                 return NotFound();
             }
-
-            // var data = await _context.PropertyInfo
-            // .Include(s => s.User).FirstOrDefaultAsync(m => m.User.Id == id);
-
-            // if (data == null)
-            // {
-            //     return NotFound();
-            // }
-
             var data = await _context.User
-        .Include(s => s.PropertyInfos)            
-        .AsNoTracking()
-        .FirstOrDefaultAsync(m => m.Id == id);
+                    .Include(s => s.PropertyInfos)
+                    .AsNoTracking()
+                    .FirstOrDefaultAsync(m => m.Id == id);
 
             if (data == null)
             {
