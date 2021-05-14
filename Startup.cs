@@ -55,7 +55,7 @@ namespace newRepo
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=PropertyInfo}/{action=Index}/{id?}");
             });
         }
     }
