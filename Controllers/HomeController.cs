@@ -27,24 +27,26 @@ namespace newRepo.Controllers
             _context = context;
         }
 
-
+        //home page
         public IActionResult Index()
         {
             return View();
         }
 
+        //user page 
         public async Task<IActionResult> Users()
         {
             return View(await _context.User.ToListAsync());
         }
 
+        //create page
         public async Task<IActionResult> Create(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
-            var data = await _context.User                   
+            var data = await _context.User
                     .FirstOrDefaultAsync(m => m.Id == id);
 
             if (data == null)
@@ -56,9 +58,55 @@ namespace newRepo.Controllers
             return View(data);
         }
 
-        public IActionResult Edit()
+        //edit page
+        public async Task<IActionResult> Edit(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var data = await _context.PropertyInfo
+                    .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (data == null)
+            {
+                Response.StatusCode = 404;
+                return View("ErrorPage", id.Value);
+            }
+
+            return View(data);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,ReleaseDate,Genre,Price")] PropertyInfo propertyInfo)
+        {
+            if (id != propertyInfo.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(propertyInfo);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    // if (!(propertyInfo.Id))
+                    // {
+                    //     return NotFound();
+                    // }
+                    // else
+                    // {
+                    //     throw;
+                    // }
+                }
+                return RedirectToAction("Index");
+            }
+            return View(propertyInfo);
         }
 
 
