@@ -13,14 +13,7 @@ namespace newRepo.Controllers
 {
     public class PropertyInfoController : Controller
     {
-        // private readonly ILogger<HomeController> _logger;
-
-        // public HomeController(ILogger<HomeController> logger)
-        // {
-        //     _logger = logger;
-        // }
-
-        private readonly PropertyDB _context;
+         private readonly PropertyDB _context;
 
         public PropertyInfoController(PropertyDB context)
         {
