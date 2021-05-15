@@ -27,14 +27,14 @@ namespace newRepo.Controllers
             _context = context;
         }
 
-        public JsonResult CreatePropertyInfo(string Name, string Type, string Description, int UserId)
+        public JsonResult CreatePropertyInfo(string Name, string Type, string Description, Guid UserId)
         {
             PropertyInfo propertyInfo = new PropertyInfo();
             propertyInfo.Name = Name;
             propertyInfo.Type = Type;
             propertyInfo.Description = Description;
 
-            var user =_context.User.FirstOrDefault(m => m.Id == UserId);
+            var user = _context.Users.FirstOrDefault(m => m.Id == UserId);
 
             propertyInfo.User = user;
 
@@ -53,17 +53,17 @@ namespace newRepo.Controllers
         //user page 
         public async Task<IActionResult> Users()
         {
-            return View(await _context.User.ToListAsync());
+            return View(await _context.Users.ToListAsync());
         }
 
         //create page
-        public async Task<IActionResult> Create(int? id)
+        public async Task<IActionResult> Create(Guid? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
-            var data = await _context.User
+            var data = await _context.Users
                     .FirstOrDefaultAsync(m => m.Id == id);
 
             if (data == null)
@@ -76,7 +76,7 @@ namespace newRepo.Controllers
         }
 
         //edit page
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(Guid? id)
         {
             if (id == null)
             {
@@ -96,7 +96,7 @@ namespace newRepo.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Type,Description")] PropertyInfo propertyInfo)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,Type,Description")] PropertyInfo propertyInfo)
         {
             if (id != propertyInfo.Id)
             {
@@ -107,24 +107,28 @@ namespace newRepo.Controllers
             {
                 try
                 {
+                    
+                    //var data = await _context.PropertyInfo
+                    //.FirstOrDefaultAsync(m => m.Id == id);
+                    //Users user = data.User;
+
+                    //propertyInfo.User = user;
+                    //propertyInfo.UserId = user.Id;
+
                     _context.Update(propertyInfo);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                   
+
                 }
                 return RedirectToAction("Users");
             }
             return View(propertyInfo);
         }
-
-        //delete       
-        // public async Task<IActionResult> Delete(int? id, bool? saveChangesError = false)
-        // {
-        public async Task<IActionResult> Delete(int? id, bool? saveChangesError = false)
+        public async Task<IActionResult> Delete(Guid? id, bool? saveChangesError = false)
         {
-            
+
             if (id == null)
             {
                 return NotFound();
@@ -145,7 +149,7 @@ namespace newRepo.Controllers
 
         [HttpPost, ActionName("Delete")]
         // [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
             var asset = await _context.PropertyInfo.FindAsync(id);
             if (asset == null)
@@ -168,13 +172,13 @@ namespace newRepo.Controllers
 
 
         //details page
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
-            var data = await _context.User
+            var data = await _context.Users
                     .Include(s => s.PropertyInfos)
                     .AsNoTracking()
                     .FirstOrDefaultAsync(m => m.Id == id);

@@ -29,6 +29,8 @@ namespace newRepo
             services.AddControllersWithViews();
             services.AddDbContext<PropertyDB>(options => options.UseSqlServer(Configuration.GetConnectionString("PropertyDB")));
             services.AddDatabaseDeveloperPageExceptionFilter();
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -14,7 +14,7 @@ namespace newRepo.Data
 
         public DbSet<newRepo.Models.PropertyInfo> PropertyInfo { get; set; }
 
-        public DbSet<newRepo.Models.User> User { get; set; }
+        public DbSet<newRepo.Models.Users> Users { get; set; }
     }
 
 }

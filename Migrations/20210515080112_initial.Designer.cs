@@ -10,7 +10,7 @@ using newRepo.Data;
 namespace newRepo.Migrations
 {
     [DbContext(typeof(PropertyDB))]
-    [Migration("20210513180540_initial")]
+    [Migration("20210515080112_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,10 +23,9 @@ namespace newRepo.Migrations
 
             modelBuilder.Entity("newRepo.Models.PropertyInfo", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -37,8 +36,8 @@ namespace newRepo.Migrations
                     b.Property<string>("Type")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
@@ -47,34 +46,35 @@ namespace newRepo.Migrations
                     b.ToTable("PropertyInfo");
                 });
 
-            modelBuilder.Entity("newRepo.Models.User", b =>
+            modelBuilder.Entity("newRepo.Models.Users", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("pwd")
+                    b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("newRepo.Models.PropertyInfo", b =>
                 {
-                    b.HasOne("newRepo.Models.User", "User")
+                    b.HasOne("newRepo.Models.Users", "User")
                         .WithMany("PropertyInfos")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("newRepo.Models.User", b =>
+            modelBuilder.Entity("newRepo.Models.Users", b =>
                 {
                     b.Navigation("PropertyInfos");
                 });
