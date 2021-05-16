@@ -169,3 +169,4 @@ C:\Users\leeka\OneDrive\Documents\NewRepo\newRepo\obj\Debug\net5.0\Razor\Views\P
 C:\Users\leeka\OneDrive\Documents\NewRepo\newRepo\obj\Debug\net5.0\Razor\Views\PropertyInfo\Index.cshtml.g.cs
 C:\Users\leeka\OneDrive\Documents\NewRepo\newRepo\obj\Debug\net5.0\Razor\Views\PropertyInfo\Users.cshtml.g.cs
 C:\Users\leeka\OneDrive\Documents\NewRepo\newRepo\obj\Debug\net5.0\Razor\Views\PropertyInfo\ErrorPage.cshtml.g.cs
+C:\Users\leeka\OneDrive\Documents\NewRepo\newRepo\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
